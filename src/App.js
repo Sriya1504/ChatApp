@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+
+import { PrimeReactProvider } from 'primereact/api';
+import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import LoginBox from './components/Loginbox/Loginbox';
+import RegisterBox from './components/Registerbox/Registerbox';
+
+import 'primeicons/primeicons.css';
+        
 import './App.css';
+import ChatRoom from './components/Chatroom/Chatroom';
+
+  
+const router = createBrowserRouter([
+  {path:"/", element:<LoginBox/>},
+  {path:'/SignUp', element:<RegisterBox/>},
+  {path:'/Chatroom',element:<ChatRoom/>}
+]);
 
 function App() {
+  const value = {
+        ripple: true,
+    };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PrimeReactProvider value={value}>
+        <RouterProvider router={router}></RouterProvider>
+    </PrimeReactProvider>
   );
 }
 
