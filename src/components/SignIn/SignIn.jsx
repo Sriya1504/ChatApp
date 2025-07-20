@@ -2,7 +2,7 @@
 import {  useNavigate } from "react-router-dom";
 import { MainHeading, SubHeading, Switching } from "../Heading/Heading";
 import { InputFieldPassword, InputFieldText } from "../InputFields/InputFeild";
-import SocialIcons from "../SocialIcons/SocialIcons";
+import { SocialIcons } from "../SocialIcons/SocialIcons";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import { useState } from "react";
 
@@ -77,11 +77,11 @@ export default function SignIn() {
             }
         })
     }
-     const handleLogin = ()=>
+     const handleLogin= ()=>
      {
         navigate('/Chatroom');
-     }
 
+     }
     return (
         <form className="flex flex-column w-18rem gap-4">
             <MainHeading mainhead="SIGN IN TO ACCOUNT"></MainHeading>
@@ -89,7 +89,7 @@ export default function SignIn() {
             <SocialIcons></SocialIcons>
             <InputFieldText id="username" error={sigInForm.mail.error} value={sigInForm.mail.value} setValue={setEmail} label="Email" help={sigInForm.mail.help}></InputFieldText>
             <InputFieldPassword id="password" error={sigInForm.password.error} value={sigInForm.password.value} setValue={setPassword}label="password" help={sigInForm.password.help}></InputFieldPassword>
-            <SubmitButton type="Sign In"  value={!sigInForm.isValid} onclick={handleLogin}></SubmitButton>
+            <SubmitButton type="Sign In"  disabled={!sigInForm.isValid} onclick={handleLogin}></SubmitButton>
             <Switching message="Dont have an account??" link="SignUp" nextpage="Sign UP!!"></Switching>
         </form>
     );

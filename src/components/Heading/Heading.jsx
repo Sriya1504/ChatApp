@@ -27,3 +27,23 @@ export function IntroHeading({introhead})
         <span className="text-2xl font-bold text-primary-50 text-center">{introhead}</span>
     )
 }
+
+export function SideBarName({name})
+{
+    return(
+        <span className="text-2xl font-bold text-cyan-500 text-start">{name}</span>
+    )
+}
+
+export function ProfileName({contactName})
+{
+    return(
+        <span className="flex text-2xl font-bold text-cyan-500 align-items-center">{contactName}</span>
+    )
+}
+export function Message({message})
+{
+    return(
+        <div className="flex align-items-center text-base font-light text-cyan-400 text-center">{message}</div>
+    )
+}

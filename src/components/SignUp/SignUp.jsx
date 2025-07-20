@@ -104,11 +104,6 @@ const handleSignUp = ()=>
         navigate('/');
      }
 
-
-
-
-
-
     return (
         <form className="flex flex-column w-18rem gap-4">
             <MainHeading mainhead="SIGN TO ACCOUNT"></MainHeading>

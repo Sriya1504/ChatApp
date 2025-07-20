@@ -1,5 +1,5 @@
-
-export default function SocialIcons()
+import 'primeicons/primeicons.css';
+export  function SocialIcons()
 {
     return(
         <div className="flex align-items-center justify-content-center gap-5">
@@ -8,4 +8,21 @@ export default function SocialIcons()
             <i className="pi pi-github"></i>
         </div>
     )
+}
+export function SideBarIcons()
+{
+    return(
+        <div className="flex align-items-center justify-content-end gap-3">
+            <i className="pi pi-filter"></i>
+            <i className="pi pi-check-square"></i>
+        </div>
+    )
+}
+export function ProfileIcons()
+{
+    <div className="flex align-items-center justify-content-end gap-3">
+            <i className="pi pi-phone"></i>
+            <i className="pi pi-video"></i>
+            <i className="pi pi-cog"></i>
+        </div>
 }
