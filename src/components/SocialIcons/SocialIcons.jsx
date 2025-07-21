@@ -1,4 +1,4 @@
-import 'primeicons/primeicons.css';
+
 export  function SocialIcons()
 {
     return(
@@ -14,15 +14,17 @@ export function SideBarIcons()
     return(
         <div className="flex align-items-center justify-content-end gap-3">
             <i className="pi pi-filter"></i>
-            <i className="pi pi-check-square"></i>
+            <i className="pi pi-user-plus"></i>
         </div>
     )
 }
 export function ProfileIcons()
 {
-    <div className="flex align-items-center justify-content-end gap-3">
+    return (
+        <div className="flex align-items-center justify-content-end gap-5">
             <i className="pi pi-phone"></i>
             <i className="pi pi-video"></i>
             <i className="pi pi-cog"></i>
         </div>
+    )
 }

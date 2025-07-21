@@ -31,19 +31,26 @@ export function IntroHeading({introhead})
 export function SideBarName({name})
 {
     return(
-        <span className="text-2xl font-bold text-cyan-500 text-start">{name}</span>
+        <span className="text-2xl flex flex-1 font-bold text-cyan-500 text-start">{name}</span>
     )
 }
 
 export function ProfileName({contactName})
 {
     return(
-        <span className="flex text-2xl font-bold text-cyan-500 align-items-center">{contactName}</span>
+        <span className="flex text-l font-semibold text-cyan-500 align-items-center">{contactName}</span>
     )
 }
 export function Message({message})
 {
     return(
-        <div className="flex align-items-center text-base font-light text-cyan-400 text-center">{message}</div>
+        <div className="flex align-items-center overflow-hidden">
+            <span style={{}} className="text-small font-light text-cyan-400 text-center">{message}</span>
+        </div>
     )
 }
+
+
+
+
+

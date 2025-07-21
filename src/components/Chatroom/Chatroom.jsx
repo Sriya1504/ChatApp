@@ -1,7 +1,8 @@
 import { Header } from "../Header/Header";
 import MessageContainer from "../MessageContainer/MessageContainer";
 import SideBar from "../Sidebar/SideBar";
-import 'primeicons/primeicons.css';
+
+
 export default function ChatRoom(){
     return(
         <div className="flex w-screen h-screen absolute flex-column bg-primary">

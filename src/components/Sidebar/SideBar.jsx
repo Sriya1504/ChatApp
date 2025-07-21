@@ -1,4 +1,3 @@
-
 import { IconField } from "primereact/iconfield";
 import { InputIcon } from "primereact/inputicon";
 import { InputText } from "primereact/inputtext";
@@ -16,7 +15,18 @@ export default function SideBar()
                 <InputText placeholder="Search" />
             </IconField>
         </div>
-        <div style={{height:"calc(100vh - 179.6px)"}}className="bg-pink-500">
+        <div style={{height:"calc(100vh - 179.6px)"}}className="bg-white overflow-y-auto">
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
+            <ContactContainer></ContactContainer>
             <ContactContainer></ContactContainer>
         </div>
         </div>

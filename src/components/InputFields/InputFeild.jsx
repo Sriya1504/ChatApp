@@ -24,3 +24,18 @@ export function InputFieldPassword({ id, label, help, value, setValue, error }) 
         </div>
     )
 }
+
+export function InputFieldPanel()
+{
+    return(
+        <div className="flex flex-row p-3 gap-2 w-full h-4rem bg-white">
+            <div className="flex align-items-center justify-content-start">
+                <i  style={{color:"black"}}className="pi pi-face-smile"></i>
+            </div>
+            <InputText  />
+            <div className="flex align-items-center justify-content-end">
+                <i style={{color:"black"}} className="pi pi-send"></i>
+            </div>
+        </div>
+    )
+}
