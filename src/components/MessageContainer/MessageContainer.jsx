@@ -1,5 +1,4 @@
 import { ProfileHeader } from "../Header/Header";
-
 import { InputFieldPanel } from "../InputFields/InputFeild";
 import { ReceiveMessage, SendMessage } from "../Message/Message";
 
