@@ -1,5 +1,8 @@
 import { InputText } from "primereact/inputtext";
 import { Password } from 'primereact/password';
+import { useContext } from "react";
+import { ChatContext } from "../Context/ChatContext";
+import { Button } from 'primereact/button';
 
 
 export function InputFieldText({ id, label,value, setValue , help ,error}) {
@@ -25,16 +28,22 @@ export function InputFieldPassword({ id, label, help, value, setValue, error }) 
     )
 }
 
-export function InputFieldPanel()
+export function InputFieldPanel({id, label,value, setValue})
 {
+    const chatctx= useContext(ChatContext)
+    function sendMessage()
+    {
+        let msg = document.querySelector("#message").value
+        chatctx.addMessage(msg,'1')
+    }
     return(
         <div className="flex flex-row p-3 gap-2 w-full h-4rem bg-white">
             <div className="flex align-items-center justify-content-start">
                 <i  style={{color:"black"}}className="pi pi-face-smile"></i>
             </div>
-            <InputText  />
+            <InputText id="message" />
             <div className="flex align-items-center justify-content-end">
-                <i style={{color:"black"}} className="pi pi-send"></i>
+                 <Button icon onClick={sendMessage} text className="pi pi-send"></Button>
             </div>
         </div>
     )

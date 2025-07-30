@@ -1,3 +1,5 @@
+import { ChatContext } from "../Context/ChatContext";
+import { useContext } from "react";
 import { SideBarName } from "../Heading/Heading";
 import { ProfileIcons, SideBarIcons } from "../SocialIcons/SocialIcons";
 import 'primeicons/primeicons.css';
@@ -10,12 +12,18 @@ export function Header(){
 
 export function ProfileHeader({contactName})
 {
+    const chatctx = useContext(ChatContext)
     return(
-        <div className="flex flex-row p-3 gap-3 h-4rem bg-white">
-            <Avatar label="J" size="medium" style={{ backgroundColor: '#06b6d4', color: '#ffffff' }} shape="circle" className="flex align-items-center"/>
+        <div className="flex flex-row w-full  bg-white">
+            {chatctx.contact.map((contact,i)=>(
+                 <div key={i} className="flex flex-row p-3 gap-3 h-4rem bg-white">
+            <Avatar label={contact.name[0]} size="medium" style={{ backgroundColor: '#06b6d4', color: '#ffffff' }} shape="circle" className="flex align-items-center"/>
             <span className="flex text-l flex-1  font-semibold text-cyan-500 align-items-center">{contactName}</span>
             <ProfileIcons></ProfileIcons>
         </div>
+            ))}
+        </div>
+        
     )
 }
 
