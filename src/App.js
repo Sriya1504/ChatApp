@@ -9,6 +9,7 @@ import 'primeicons/primeicons.css';
                
 import './App.css';
 import ChatRoom from './components/Chatroom/Chatroom';
+import { UserProvider } from './components/Context/UserContext';
 
   
 const router = createBrowserRouter([
@@ -21,9 +22,12 @@ function App() {
         ripple: true,
     };
   return (
+    <UserProvider>
     <PrimeReactProvider value={value}>
-        <RouterProvider router={router}></RouterProvider>
+        <RouterProvider router={router}>
+        </RouterProvider>
     </PrimeReactProvider>
+    </UserProvider>
   );
 }
 

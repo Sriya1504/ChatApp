@@ -26,7 +26,7 @@ export function ProfileName({contactName})
 export function Message({message})
 {
     return(
-        <div className="flex align-items-center overflow-hidden">
+        <div className="flex align-items-center justif-content-start overflow-hidden">
             <span style={{}} className="text-small font-light text-cyan-400 text-center msg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus quo culpa quibusdam nemo, dolorem quisquam, eaque veritatis rerum autem cum libero cumque. A inventore ducimus, repellendus vero saepe corporis eos.</span>
         </div>
     )
