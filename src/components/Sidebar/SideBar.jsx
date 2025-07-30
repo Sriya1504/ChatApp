@@ -17,17 +17,6 @@ export default function SideBar()
         </div>
         <div style={{height:"calc(100vh - 179.6px)"}}className="bg-white overflow-y-auto">
             <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
-            <ContactContainer></ContactContainer>
         </div>
         </div>
     );

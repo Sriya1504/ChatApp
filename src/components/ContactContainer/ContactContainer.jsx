@@ -3,10 +3,12 @@ import { Avatar } from 'primereact/avatar';
 import { Button } from 'primereact/button';
 import { Menu } from 'primereact/menu';
 import { Toast } from 'primereact/toast';
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
+import { ChatContext } from "../Context/ChatContext";
 
 export function ContactContainer()
 {
+    const chatctx = useContext(ChatContext)
     const menuLeft = useRef(null);
     const toast = useRef(null);
     const items = [
@@ -25,20 +27,27 @@ export function ContactContainer()
         }
     ];
 
-    return(
-        <div  className=" flex h-4rem bg-white overflow-y-auto">
-            <div className="flex justify-content-start p-3">
-                <Avatar label="J" size="medium" style={{ backgroundColor: '#06b6d4', color: '#ffffff' }} shape="circle" />
-            </div>
-            <div className="flex flex-column justify-content-start flex-1 pt-2">
-                <ProfileName contactName="JohnDoe"></ProfileName>
-                <Message message="lorem" ></Message>
-            </div>
-            <div className="flex justify-content-end p-3">
-                <Toast ref={toast}></Toast>
-                <Menu model={items} popup ref={menuLeft} id="popup_menu_left" />
-                <Button icon="pi text-black-alpha-90 pi-ellipsis-v" rounded text  severity=" Filter" aria-label="Add a Peer" tooltip="Options" tooltipOptions={{ position: 'bottom' }} onClick={(event) => menuLeft.current.toggle(event)} aria-controls="popup_menu_left" aria-haspopup />
-            </div>
+     return (
+        <div className="flex flex-column gap-2 overflow-y-auto">
+            {chatctx.contact.map((contact, index) => (
+                <div key={index} className="flex h-4rem bg-white">
+                    <div className="flex justify-content-start p-3">
+                        <Avatar label={contact.name[0]} shape="circle" size="large" style={{ backgroundColor: '#06b6d4', color: '#ffffff' }} />
+                    </div>
+                    <div className="flex flex-column justify-content-start flex-1 pt-2">
+                        <ProfileName contactName={contact.name} />
+                        <Message message={contact.lastMesssage} />
+                    </div>
+                    <div className="flex justify-content-end p-3">
+                        <Toast ref={toast} />
+                        <Menu model={items} popup ref={menuLeft} id={`popup_menu_${index}`} />
+                        <Button icon="pi pi-ellipsis-v" rounded text tooltip="Options" tooltipOptions={{ position: 'bottom' }}
+                            onClick={(e) => menuLeft.current.toggle(e)}
+                            aria-controls={`popup_menu_${index}`}
+                            aria-haspopup />
+                    </div>
+                </div>
+            ))}
         </div>
-    )
+    );
 }

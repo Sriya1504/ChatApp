@@ -10,6 +10,7 @@ import 'primeicons/primeicons.css';
 import './App.css';
 import ChatRoom from './components/Chatroom/Chatroom';
 import { UserProvider } from './components/Context/UserContext';
+import { ChatProvider } from './components/Context/ChatContext';
 
   
 const router = createBrowserRouter([
@@ -23,10 +24,12 @@ function App() {
     };
   return (
     <UserProvider>
+      <ChatProvider>
     <PrimeReactProvider value={value}>
         <RouterProvider router={router}>
         </RouterProvider>
     </PrimeReactProvider>
+    </ChatProvider>
     </UserProvider>
   );
 }
